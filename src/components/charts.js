@@ -42,6 +42,8 @@ const data = [
   }
 ];
 
+// Highlight and Zoom methods
+// ----------------------------
 const getAxisYDomain = (from, to, ref, offset) => {
   const refData = data.slice(from - 1, to);
   let [bottom, top] = [refData[0][ref], refData[0][ref]];
@@ -52,6 +54,48 @@ const getAxisYDomain = (from, to, ref, offset) => {
 
   return [(bottom | 0) - offset, (top | 0) + offset];
 };
+
+
+const zoom = () => {
+  let { refAreaLeft, refAreaRight, data } = this.state;
+
+  if (refAreaLeft === refAreaRight || refAreaRight === '') {
+    this.setState(() => ({
+      refAreaLeft: '',
+      refAreaRight: '',
+    }));
+    return;
+  }
+
+  // xAxis domain
+  if (refAreaLeft > refAreaRight) [refAreaLeft, refAreaRight] = [refAreaRight, refAreaLeft];
+
+  // yAxis domain
+  const [bottom, top] = getAxisYDomain(refAreaLeft, refAreaRight, 'cost', 1);
+
+  this.setState(() => ({
+    refAreaLeft: '',
+    refAreaRight: '',
+    data: data.slice(),
+    left: refAreaLeft,
+    right: refAreaRight,
+    bottom,
+    top,
+  }));
+}
+
+const zoomOut = () => {
+  const { data } = this.state;
+  this.setState(() => ({
+    data: data.slice(),
+    refAreaLeft: '',
+    refAreaRight: '',
+    left: 'dataMin',
+    right: 'dataMax',
+    top: 'dataMax+1',
+    bottom: 'dataMin',
+  }));
+}
 
 const initialState = {
   data,
@@ -75,6 +119,8 @@ class CustomizedLabel extends PureComponent {
   }
 }
 */
+
+// Custom Labels & Tooltips classes
 
 class CustomizedAxisTick extends PureComponent {
   render() {
@@ -111,51 +157,9 @@ export default class SimpleLineChart extends PureComponent {
     this.state = initialState;
   }
 
-  zoom() {
-    let { refAreaLeft, refAreaRight, data } = this.state;
-
-    if (refAreaLeft === refAreaRight || refAreaRight === '') {
-      this.setState(() => ({
-        refAreaLeft: '',
-        refAreaRight: '',
-      }));
-      return;
-    }
-
-    // xAxis domain
-    if (refAreaLeft > refAreaRight) [refAreaLeft, refAreaRight] = [refAreaRight, refAreaLeft];
-
-    // yAxis domain
-    const [bottom, top] = getAxisYDomain(refAreaLeft, refAreaRight, 'cost', 1);
-
-    this.setState(() => ({
-      refAreaLeft: '',
-      refAreaRight: '',
-      data: data.slice(),
-      left: refAreaLeft,
-      right: refAreaRight,
-      bottom,
-      top,
-    }));
-  }
-
-  zoomOut() {
-    const { data } = this.state;
-    this.setState(() => ({
-      data: data.slice(),
-      refAreaLeft: '',
-      refAreaRight: '',
-      left: 'dataMin',
-      right: 'dataMax',
-      top: 'dataMax+1',
-      bottom: 'dataMin',
-    }));
-  }
-
   toPercent(decimal, fixed = 0) {
     return `${decimal}€`;
   } 
-
 
   render() {
     const {
@@ -169,7 +173,7 @@ export default class SimpleLineChart extends PureComponent {
         <Button
           href={null}
           className="btn update"
-          onClick={this.zoomOut.bind(this)}
+          // onClick={zoomOut.bind(this)}
           color="primary">
           Zoom Out
         </Button>
@@ -183,9 +187,10 @@ export default class SimpleLineChart extends PureComponent {
             margin={{
               top: 5, right: 10, left: 5, bottom: 75,
             }}
-            onMouseDown={e => this.setState({ refAreaLeft: e.activeLabel })}
-            onMouseMove={e => this.state.refAreaLeft && this.setState({ refAreaRight: e.activeLabel })}
-            onMouseUp={this.zoom.bind(this)}
+            // TODO: Implement Zoom: http://recharts.org/en-US/examples/HighlightAndZoomLineChart
+            // onMouseDown={e => this.setState({ refAreaLeft: e.activeLabel })}
+            // onMouseMove={e => this.state.refAreaLeft && this.setState({ refAreaRight: e.activeLabel })}
+            // onMouseUp={zoom.bind(this)}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
