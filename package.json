@@ -1,19 +1,23 @@
 {
   "name": "charts_loones",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "repository": "https://github.com/loones19/ChartsLoones",
+  "description": "Market Data Application",
+  "productName": "Market Data Application",
   "dependencies": {
     "@material-ui/core": "^4.2.0",
     "axios": "^0.19.0",
     "react": "^16.8.6",
+    "react-app-env": "^1.2.3",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "recharts": "^1.6.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-env --env-file=config/development.env start",
+    "build": "react-app-env --env-file=config/production.env build",
+    "test": "react-app-env test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

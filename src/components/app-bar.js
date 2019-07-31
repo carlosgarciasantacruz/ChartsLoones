@@ -17,7 +17,7 @@ export default function AppBarComponent() {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar>
-            <img src={logo} alt="Loones Logo"/>
+            <a href="https://loones.es/"><img src={logo} alt="Loones Logo"/></a>
         </Toolbar>
       </AppBar>
     </div>

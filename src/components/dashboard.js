@@ -34,9 +34,7 @@ const styles = theme => ({
   }
 });
 
-//const BASE_URL = 'http://127.0.0.1:8000'
-const BASE_URL = 'https://api.loones.es'
-const SUBCATEGORIES_URL = BASE_URL + '/subcategories'
+const SUBCATEGORIES_URL = process.env.REACT_APP_API_URL + 'subcategories'
 
 class Dashboard extends React.Component {
 
@@ -164,7 +162,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Extra Virgin olive Oil
+                Extra Virgin Olive Oil (€/100kg)
           </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.extra_virgin_olive_oil_data} />
@@ -173,7 +171,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Virgin Olive Oil
+                Virgin Olive Oil (€/100kg)
           </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.virgin_olive_oil_data} />
@@ -182,7 +180,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Lampante Olive Oil
+                Lampante Olive Oil (€/100kg)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.lampante_olive_oil_data} />
@@ -191,7 +189,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Red Whine
+                Red Whine (€/hl)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.red_wine} />
@@ -200,7 +198,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                White Wine
+                White Wine (€/hl)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.white_wine} />
@@ -209,7 +207,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Shell Rice
+                Shell Rice (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.shell_rice} />
@@ -218,7 +216,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Barley Feed
+                Barley Feed (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.barley_feed} />
@@ -227,7 +225,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Soft Bread Wheat
+                Soft Bread Wheat (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.soft_bread_wheat} />
