@@ -83,7 +83,6 @@ class Dashboard extends React.Component {
     const extraVirginOliveOilID = 1;
     axios.get(`${SUBCATEGORIES_URL}/${extraVirginOliveOilID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ extra_virgin_olive_oil_data: res.data });
       })
   }
@@ -92,7 +91,6 @@ class Dashboard extends React.Component {
     const virginOliveOilID = 2;
     axios.get(`${SUBCATEGORIES_URL}/${virginOliveOilID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ virgin_olive_oil_data: res.data });
       })
   }
@@ -101,7 +99,6 @@ class Dashboard extends React.Component {
     const lampanteOliveOilID = 3;
     axios.get(`${SUBCATEGORIES_URL}/${lampanteOliveOilID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ lampante_olive_oil_data: res.data });
       })
   }
@@ -110,7 +107,6 @@ class Dashboard extends React.Component {
     const redWineID = 4;
     axios.get(`${SUBCATEGORIES_URL}/${redWineID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ red_wine: res.data });
       })
   }
@@ -119,7 +115,6 @@ class Dashboard extends React.Component {
     const whiteWineID = 5;
     axios.get(`${SUBCATEGORIES_URL}/${whiteWineID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ white_wine: res.data });
       })
   }
@@ -128,7 +123,6 @@ class Dashboard extends React.Component {
     const shellRiceID = 6;
     axios.get(`${SUBCATEGORIES_URL}/${shellRiceID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ shell_rice: res.data });
       })
   }
@@ -137,7 +131,6 @@ class Dashboard extends React.Component {
     const barleyFeedID = 7;
     axios.get(`${SUBCATEGORIES_URL}/${barleyFeedID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ barley_feed: res.data });
       })
   }
@@ -146,7 +139,6 @@ class Dashboard extends React.Component {
     const softBreadWheatID = 8;
     axios.get(`${SUBCATEGORIES_URL}/${softBreadWheatID}/dataprice_by_subcategory/`)
       .then(res => {
-        console.log(res.data);
         this.setState({ soft_bread_wheat: res.data });
       })
   }
