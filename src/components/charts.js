@@ -140,7 +140,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
     return (
       <div className="custom-tooltip">
-        <p className="label">{`Date: ${new Date(label).getDay()}/${new Date(label).getMonth()}/${new Date(label).getFullYear()}`}</p>
+        <p className="label">{`Date: ${new Date(label).toLocaleDateString()}`}</p>
         <p className="intro">{`Price: ${payload !== null ? payload[0].value : ''}€`}</p>
       </div>
     );

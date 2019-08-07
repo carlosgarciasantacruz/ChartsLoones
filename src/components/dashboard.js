@@ -154,7 +154,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Extra Virgin Olive Oil (€/100kg)
+                Extra Virgin Olive Oil (€/T)
           </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.extra_virgin_olive_oil_data} />
@@ -163,7 +163,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Virgin Olive Oil (€/100kg)
+                Virgin Olive Oil (€/T)
           </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.virgin_olive_oil_data} />
@@ -172,7 +172,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Lampante Olive Oil (€/100kg)
+                Lampante Olive Oil (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.lampante_olive_oil_data} />
