@@ -181,7 +181,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Red Whine (€/hl)
+                Red Wine (€/hl)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.red_wine} />
