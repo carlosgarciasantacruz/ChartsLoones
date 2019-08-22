@@ -33,8 +33,10 @@ function AppBarComponent() {
   }
 
   function handleClose(lng) {
+    console.log(lng);
     setAnchorEl(null);
-    i18n.changeLanguage(lng);
+    if (lng != null)
+      i18n.changeLanguage(lng);
   }
 
   return (
@@ -67,7 +69,7 @@ function AppBarComponent() {
                 horizontal: 'right',
               }}
               open={open}
-              onClose={handleClose}
+              onClose={() => handleClose(null)}
             >
               <MenuItem onClick={() => handleClose('es')}>
                 <ReactCountryFlag code="es" />&nbsp;&nbsp; ES
