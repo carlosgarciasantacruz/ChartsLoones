@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import {
   LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceArea,
 } from 'recharts';
+import { Translation } from 'react-i18next';
 
 const data = [
   {
@@ -175,7 +176,7 @@ export default class SimpleLineChart extends PureComponent {
           className="btn update"
           // onClick={zoomOut.bind(this)}
           color="primary">
-          Zoom Out
+          <Translation>{t => t('zoom-out')}</Translation>
         </Button>
 
         {/* Custom LineChart */}

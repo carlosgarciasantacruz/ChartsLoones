@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import { Typography } from '@material-ui/core';
 import SimpleLineChart from './charts';
+import { Translation } from 'react-i18next';
+
 
 var classNames = require('classnames');
 
@@ -154,8 +156,8 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Extra Virgin Olive Oil (€/T)
-          </Typography>
+                <Translation>{t => t('extra-virgin-olive-oil')}</Translation> (€/T)
+              </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.extra_virgin_olive_oil_data} />
             </Paper>
@@ -163,7 +165,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Virgin Olive Oil (€/T)
+                <Translation>{t => t('virgin-olive-oil')}</Translation> (€/T)
           </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.virgin_olive_oil_data} />
@@ -172,7 +174,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Lampante Olive Oil (€/T)
+                <Translation>{t => t('lampante-olive-oil')}</Translation> (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.lampante_olive_oil_data} />
@@ -181,7 +183,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Red Wine (€/hl)
+                <Translation>{t => t('red-wine')}</Translation> (€/hl)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.red_wine} />
@@ -190,7 +192,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                White Wine (€/hl)
+                <Translation>{t => t('white-wine')}</Translation> (€/hl)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.white_wine} />
@@ -199,7 +201,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Shell Rice (€/T)
+                <Translation>{t => t('shell-rice')}</Translation> (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.shell_rice} />
@@ -208,7 +210,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Barley Feed (€/T)
+                <Translation>{t => t('barley-feed')}</Translation> (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.barley_feed} />
@@ -217,7 +219,7 @@ class Dashboard extends React.Component {
           <Grid item xs={12} md={4}>
             <Paper className={customListPapers} elevation={8}>
               <Typography variant="h4" align="center" color="primary" >
-                Soft Bread Wheat (€/T)
+                <Translation>{t => t('soft-bread-wheat')}</Translation> (€/T)
               </Typography>
               <Divider variant='middle' />
               <SimpleLineChart data={this.state.soft_bread_wheat} />
