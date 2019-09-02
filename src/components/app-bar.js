@@ -33,7 +33,6 @@ function AppBarComponent() {
   }
 
   function handleClose(lng) {
-    console.log(lng);
     setAnchorEl(null);
     if (lng != null)
       i18n.changeLanguage(lng);
