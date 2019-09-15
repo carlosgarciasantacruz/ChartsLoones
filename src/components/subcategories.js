@@ -11,8 +11,8 @@ class SubcategoryAPI {
     static redWineID = 4;
     static whiteWineID = 5;
     static shellRiceID = 6;
-    static barleyFeedID = 7;
-    static softBreadWheatID = 8;
+    static softBreadWheatID = 7;
+    static barleyFeedID = 8;
 
     // Measures
     static measures = {
